@@ -35,7 +35,7 @@ if(hsLocal === null) {
   localStorage.setItem('hsLocal', JSON.stringify(listofScores));
   
 } else if(hsLocal !== null){
-    for(var i = hsLocal.newScore.length - 1; i > 0; i--) {
+    for(var i = hsLocal.newScore.length; i >= 0; i--) {
       if(hsLocal.newScore[i] < hsLocal.newScore[i + 1]) {
         var tempScore = hsLocal.newScore[i];
         hsLocal.newScore[i] = hsLocal.newScore[i + 1];
