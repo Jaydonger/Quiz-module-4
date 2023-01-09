@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Quiz module 4</title>
-    <link rel="stylesheet" href="assets/style.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Quiz module 4</title>
+        <link rel="stylesheet" href="assets/style.css" />
+    </head>
+    
+    <body>
+        <section id="divsec">
+            <h1>Take the quiz!</h1>
+            <article>
+                This is a timed quiz! Your score will be based on correct answers and time 
+                remaining when the quiz is finished.
+            </article>
+            <button id="Start" class="artButton">Start quiz</button>
+        </section>
+        
+        <h2 id="timer">Time:75</h2>
+        <button id="viewHighscore">View Highscores</button>
 
-  <body>
-    <section id="divsec">
-        <h1>Take the quiz!</h1>
-        <article>
-            This is a timed quiz! Your score will be based on correct answers and time 
-            remaining when the quiz is finished.
-        </article>
-        <button id="Start" class="artButton">Start quiz</button>
-        <button class="artButton" id="View">View highscores</button>
-    </section>
+        <form id="form1">
+            <button id="resetQuiz">Go back</button>
+        </form>
 
-    <h2 id="timer">Time:75</h2>
-
-    <section class="hide" id="sec1">
-        <ul>
+        <section class="hide" id="sec1">
+        <ol>
             <h3>What is your name?</h3>
             <li><button class="incorrect">That's none of your business!</button></li>
             <li><button class="correct">Arthur, King of the Britons</button></li>
             <li><button class="incorrect">uhhh...</button></li>
             <li><button class="incorrect">Mark Carlson</button></li>
-        </ul>
+        </ol>
     </section>
-
+    
     <section class="hide" id="sec2">
-
-        <ul>
+        
+        <ol>
             <h3>What is your quest?</h3>
             <li><button class="incorrect">To get the highest score.</button></li>
             <li><button class="incorrect">To pass the class!</button></li>
             <li><button class="correct">I seek the holy grail.</button></li>
             <li><button class="incorrect">Ohh, I get it now...</button></li>
-        </ul>
-
+        </ol>
+        
     </section>
-
+    
     <section class="hide" id="sec3">
-
-        <ul>
+        
+        <ol>
             <h3>What is the airspeed velocity of an unladen swallow?</h3>
             <li><button class="incorrect">V<sub>i</sub> = A<sub>o</sub>&radic;5[(<sup>Q<sub>c</sub></sup>&#8260;<sub>P<sub>o</sub></sub> + 1) 2&frasl;7 - 1]</button></li>
             <li><button class="incorrect">I don't know that!</button></li>
             <li><button class="correct">African or European?</button></li>
             <li><button class="incorrect">What kind of quiz is this???</button></li>
-        </ul>
-
+        </ol>
+        
     </section>
-
-    <section class="hide" id="sec4">
-        <label>Enter your initials:</label>
-        <textarea id="initials"></textarea>
-        <button>Submit</button> <button>Clear highscores</button>
-    </section>
-
+    
+    <form class="hide container" id="sec4" >
+        <label font-size="30">Enter your initials:</label>
+        <input type="text" id="initials" name="usrInput"></input>
+        <button type="submit" id="btn" value="submit_button">Submit</button> 
+        <button id="clearHS">Clear highscores</button>
+        <ol id="highScore"></ol>
+        <p>(note: Your score placement will be updated on page refresh.)</p>
+    </form>
+    
     <h4 id="dispCorrect" class="hide">Correct!</h4>
     <h4 id="dispIncorrect" class="hide">Incorrect!</h4>
 
     <script type="text/javascript" src="assets/script.js"></script>
-  </body>
+</body>
