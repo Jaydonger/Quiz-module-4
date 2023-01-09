@@ -102,9 +102,8 @@ function formSubmission(event) {
   
   li.append(appendScore);
   
-  userInput.disabled = true;
-  
   disablesubmit.disabled = true;
+  userInput.disabled = true;
   
 }
 
@@ -118,11 +117,14 @@ function formSubmission(event) {
   var timeInterval = setInterval(function () {
     timeLeft--;
     timerEl.textContent = 'Time:' + timeLeft;
-    
+
+    // Quiz ends if all questions are answered or time runs out.
+
     if(timeLeft !== 0 && qRemaining === 0) {
       clearInterval(timeInterval);
       viewHS.disabled = false;
-      sec1El.classList.remove('show');
+      var el = document.querySelector('.show');
+      el.classList.remove('show');
       sec4El.classList.add('show');
       score = timeLeft * correctGuesses;
       return;
@@ -184,7 +186,7 @@ function formSubmission(event) {
         setTimeout(() => {
           sec3El.classList.remove('show');
           sec4El.classList.add('show');
-        }, 500);
+        }, 1000);
       }
       setTimeout(() => {
         dispCorrect.classList.remove('show');
@@ -232,7 +234,7 @@ function formSubmission(event) {
   viewHS.addEventListener("click", function() {
     qPage.style.display = 'none';
     sec4El.classList.add('show');
-    //userInput.disabled = true;
+    userInput.disabled = true;
     disablesubmit.disabled = true;
 
   });
