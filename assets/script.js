@@ -58,16 +58,16 @@ if(hsLocal === null) {
 
 }
   
-  console.log(listofScores.initials.length);
+console.log(listofScores.initials.length);
   // clears list of highscores when button is pressed.
-  function clearlist(event) {
-    event.preventDefault();
+function clearlist(event) {
+  event.preventDefault();
+  localStorage.clear();
     
   while( highScore.firstChild ){
     highScore.removeChild( highScore.firstChild );
   }
   
-  localStorage.clear();
   
 }
 
@@ -129,7 +129,8 @@ function formSubmission(event) {
     }else if(timeLeft === 0 && qRemaining > 0) {
       clearInterval(timeInterval);
       viewHS.disabled = false;
-      sec1El.classList.remove('show');
+      var el = document.querySelector('.show');
+      el.classList.remove('show');
       sec4El.classList.add('show');
       score = timeLeft * correctGuesses;
       return;
